@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_160598) do
+ActiveRecord::Schema.define(version: 2020_11_21_160599) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,23 @@ ActiveRecord::Schema.define(version: 2020_11_21_160598) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title", null: false
+    t.text "abstract", null: false
+    t.integer "position"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.string "url", null: false
+    t.string "seo_title", null: false
+    t.text "seo_keywords", default: "", null: false
+    t.text "seo_description", default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_categories_on_name", unique: true
+    t.index ["title"], name: "index_categories_on_title", unique: true
+    t.index ["url"], name: "index_categories_on_url", unique: true
   end
 
   create_table "companies", force: :cascade do |t|

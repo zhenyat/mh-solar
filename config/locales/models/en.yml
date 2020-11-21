@@ -7,6 +7,15 @@ en:
       sample:
         one:                    Sample
         other:                  Samples
+      company:
+        one:                    Company
+        other:                  Companies
+      category:
+        one:                    Category
+        other:                  Categories
+      product:
+        one:                    Product
+        other:                  Products
 
     attributes:
       user:
@@ -22,4 +31,16 @@ en:
         title:                  Title
         price:                  price
         quantity:               Quantity
-        status:                 Status
+      company:
+        name:                   Name
+        title:                  Title
+        email:                  Email
+        phone:                  Phone
+        address:                Address
+      category:
+        name:                   Name
+        title:                  Title
+        abstract:               Abstract
+        email:                  Email
+        position:               Position
+        
