@@ -1,0 +1,22 @@
+.row
+  .col-md-6
+    = simple_form_for([:admin, @company], html: {multipart: true}) do |f|
+      = f.error_notification message: t('messages.error_notification')
+
+      .form-inputs
+        = f.input :name
+        = f.input :title
+        = f.input :email
+        = f.input :phone
+        = f.input :address
+        = f.input :url
+        = f.input :seo_title
+        = f.input :seo_description
+        = f.input :seo_keywords
+
+      .form_actions
+        .row
+          .col-md-3
+            = f.submit t('actions.save'), class: 'btn btn-primary btn-sm'
+          .col-md-3
+            = link_to t('actions.back'), admin_companies_path, class: 'btn btn-default btn-sm'
