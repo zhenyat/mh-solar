@@ -25,8 +25,14 @@ Rails.application.routes.draw do
       # Add new admin resources before this line
     end
 
-    root   'pages#home'                                   # root_path
-    resources :samples
+    namespace :api do
+      root   'pages#home'      # root_path
+      namespace :v1 do
+        resources :categories
+        resources :companies
+        resources :samples
+      end
+    end
   end
 
   if MULTILINGUAL
